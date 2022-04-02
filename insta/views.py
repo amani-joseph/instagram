@@ -11,6 +11,7 @@ def index(request):
         "comments": ["Dope","Capping","Big up my dawg!!"],
         "pub_date": "Mar 2",
         "caption": "Life on the fast lane",
+        "user": "John Doe"
         # comment: ""
     },
         {
@@ -19,6 +20,7 @@ def index(request):
             "comments": ["Dope", "Capping", "Big up my dawg!!"],
             "pub_date": "Mar 2",
             "caption": "Life on the fast lane",
+            "user": "John Doe"
             # comment: ""
         },
         {
@@ -27,6 +29,7 @@ def index(request):
             "comments": ["Dope", "Capping", "Big up my dawg!!"],
             "pub_date": "Mar 2",
             "caption": "Life on the fast lane",
+            "user": "John Doe"
             # comment: ""
         },
         {
@@ -35,6 +38,7 @@ def index(request):
             "comments": ["Dope", "Capping", "Big up my dawg!!"],
             "pub_date": "Mar 2",
             "caption": "Life on the fast lane",
+            "user": "John Doe"
             # comment: ""
         },
     ]
