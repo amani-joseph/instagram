@@ -6,9 +6,9 @@ from django.http import HttpResponse
 
 def index(request):
     posts = [{
-        "image": "https://images.pexels.com/photos/11369622/pexels-photo-11369622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "image": "https://images.pexels.com/photos/5989067/pexels-photo-5989067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "likes": "600",
-        "comments": ["Dope","Capping","Big up my dawg!!"],
+        "comments": ["Dope", "Capping", "Big up my dawg!!"],
         "pub_date": "Mar 2",
         "caption": "Life on the fast lane",
         "user": "John Doe"
@@ -46,4 +46,3 @@ def index(request):
         'posts': posts
     }
     return render(request, 'insta/index.html', context)
-
