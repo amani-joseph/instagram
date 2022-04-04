@@ -14,23 +14,11 @@
 		<div class="btn btn-primary"
 			><span><i class="bi bi-facebook"></i></span> Login with facebook</div
 		>
-		<form method="POST" class="d-flex flex-column align-items-center">
-			{% csrf_token %}
-			<fieldset class="form-group">
-				<legend class="border-bottom mb-4 text-center">Sign in</legend>
-			</fieldset>
-			<div class="form-group mx-auto my-3">
-				<a href="{% url 'login'%}">
-					<button class="btn btn-lg btn-block btn-primary" type="submit"
-						>Log In</button
-					>
-				</a>
-			</div>
-		</form>
-		<div class="border pt-3">
-			<small class="text-muted">
-				Don't have an account?
-				<a class="ml-2" href="{% url 'register' %}">Sign Up</a>
+
+		<div class="border m-3 pt-3">
+			<small class="p-3 text-muted">
+				You are logged out
+				<a class="ml-2" href="{% url 'login' %}">Login</a>
 			</small>
 		</div>
 	</div>
