@@ -10,11 +10,13 @@
 				class="rounded-circle mx-3"
 				src="{{ user.profile.image.url }}"
 			/>
+
 		</div>
 		<div class="container">
-			<div class="col-4 d-flex flex-row mx-3 px-2 justify-content-start">
+			<div class="col-md-6 d-flex flex-row mx-3 px-2 justify-content-start">
 				<h2 class="account-heading">{{user.username}}</h2>
-				<span class="btn border mx-3">Edit Profile</span>
+
+				<span class="btn border mx-3"><a class="text-decoration-none text-dark " href="{% url 'edit_profile'%}">Edit Profile</a></span>
 				<span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
