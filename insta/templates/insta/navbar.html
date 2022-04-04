@@ -19,25 +19,26 @@
 				style="background-color: #fff !important"
 			>
 				<div
-					class="container d-flex flex-row flex-wrap justify-content-center col mx-auto"
+					class="container d-flex flex-row flex-wrap col"
 				>
-					<div class="container col-md-6">
+					<div class="container col mx-auto">
 						{% if user.is_authenticated %}
 
 						<ul
-							class="list-unstyled d-flex flex-row align-content-center mx-auto"
+							class="list-unstyled d-flex flex-row justify-content-center mx-auto"
 						>
-							<li class="navbar-brand my-auto">
+							<li class="navbar-brand my-auto ">
 								<a href="#">
 									<img
 										src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
 										alt=""
+										width="150"
 										class="d-inline-block align-text-top"
 									/>
 								</a>
 							</li>
 							<li>
-								<form class="nav-item mx-3 my-auto">
+								<form class="nav-item mx-3 col my-auto">
 									<input
 										class="form-control"
 										type="search"

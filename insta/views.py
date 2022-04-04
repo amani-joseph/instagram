@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 
 
 # Create your views here.
 
 def index(request):
-    posts = [{
+    local_posts = [{
         "image": "https://images.pexels.com/photos/5989067/pexels-photo-5989067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "likes": "600",
         "comments": ["Dope", "Capping", "Big up my dawg!!"],
@@ -43,6 +44,6 @@ def index(request):
         },
     ]
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request, 'insta/index.html', context)

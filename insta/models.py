@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     name = models.CharField(max_length=200, null=True, blank=True)
     caption = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField(null=False, blank=False)
+    image = models.ImageField(null=False, blank=False, upload_to='posts')
     likes = models.BigIntegerField(default=0)
     comments = models.CharField(max_length=200, null=True, blank=True)
     pub_date = models.DateTimeField(default=timezone.now)
