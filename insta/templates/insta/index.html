@@ -16,7 +16,9 @@
 						width="32"
 						height="32"
 					/>
-					<a href="{% url 'author-profile' post.user.profile.id %}"
+					<a
+						class="text-decoration-none text-dark mx-2"
+						href="{% url 'author-profile' post.user.profile.id %}"
 						>{{post.user}}</a
 					>
 					<span class="mx-2"

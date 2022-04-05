@@ -1,6 +1,9 @@
+from dataclasses import fields
 from importlib import import_module
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponse
+from django.urls import reverse
 from django.views.generic import (
     ListView,
     DetailView,
@@ -9,6 +12,7 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Post
+from .forms import UploadForm
 from users_app.models import Profile
 
 
@@ -24,7 +28,52 @@ class PostListView(ListView):
 class AuthorDetailView(DetailView):
     model = Profile
     template_name = 'users_app/not_user_profile.html' 
+    
+    
+class PostCreateView(LoginRequiredMixin ,CreateView):
+    model = Post
+    fields = ['image', 'caption', 'hashtags']
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.save()
+        return super(PostCreateView, self).form_valid(form)
+    
+    def get_success_url(self):
+        return reverse('insta-home')
+    
+    
+    
 # PostViews
+# def PostCreate(request):
+#     form = UploadForm
+#     context= {
+#         "form": form
+#     }
+#     if request.method == 'POST':
+#         currentUser = request.user
+#         form = UploadForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             post = Post()
+#             post.caption = form.cleaned_data.get('caption')
+#             print(post.caption)
+#             post.image = form.cleaned_data.get('image')
+#             post.hashtags = form.cleaned_data.get('hashtags')
+#             post.save()
+#             return redirect('insta-home')
+#     return render(request, 'insta/post_form.html', context)
+
+# if request.method == 'POST':
+#         form = UserRegisterForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             username = form.cleaned_data.get('username')
+#             messages.success(request, f'Your account has been created {username} \n welcome to instagram')
+#             return redirect('login')
+#     else:
+#         form = UserRegisterForm()
+#     return render(request, "users_app/register.html", {'form': form})
+
 def index(request):
     local_posts = [{
         "image": "https://images.pexels.com/photos/5989067/pexels-photo-5989067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
