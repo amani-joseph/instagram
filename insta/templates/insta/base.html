@@ -44,11 +44,15 @@
 		{% endif %}
 	</head>
 	<body style="font-family: 'Roboto', sans-serif !important">
-		{% include "insta/navbar.html" %} {% if messages %} {% for message in
-		messages %}
-		<div class="col-md-6 mx-auto alert alert-{{ message.tags }}">
-			{{ message }}
-		</div>
-		{% endfor %} {% endif %} {% block content %} {%endblock%}
+		{% include "insta/navbar.html" %}
+		{% if messages %}
+			{% for message in messages %}
+
+				<div class="col-md-6 mx-auto alert alert-{{ message.tags }}">
+					{{ message }}
+				</div>
+			{% endfor %}
+		{% endif %}
+		{% block content %} {%endblock%}
 	</body>
 </html>
