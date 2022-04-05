@@ -1,10 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView
+)
 from .models import Post
 
 
 # Create your views here.
-
+# PostViews
+class PostListView(ListView):
+    model = Post
+    template_name = 'insta/index.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-pub_date']
+# PostViews
 def index(request):
     local_posts = [{
         "image": "https://images.pexels.com/photos/5989067/pexels-photo-5989067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
