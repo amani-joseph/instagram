@@ -1,3 +1,4 @@
+from importlib import import_module
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import (
@@ -8,6 +9,7 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Post
+from users_app.models import Profile
 
 
 # Create your views here.
@@ -17,6 +19,11 @@ class PostListView(ListView):
     template_name = 'insta/index.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-pub_date']
+    
+    
+class AuthorDetailView(DetailView):
+    model = Profile
+    template_name = 'users_app/not_user_profile.html' 
 # PostViews
 def index(request):
     local_posts = [{
