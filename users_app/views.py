@@ -30,6 +30,14 @@ def profile(request):
 
 
 @login_required
+def author_profile(request):
+    context = {
+        'posts': Post.objects.filter(user=request.post.user).all()
+    }
+    return render(request, 'users_app/not_user_profile.html',context )
+
+
+@login_required
 def editProfile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
