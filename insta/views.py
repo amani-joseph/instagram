@@ -24,7 +24,7 @@ class PostListView(ListView):
     template_name = 'insta/index.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-pub_date']
-    paginate_by = 5
+    paginate_by = 10
     
     
 class AuthorDetailView(DetailView):
