@@ -2,6 +2,9 @@ from email.mime import image
 from django.test import TestCase
 from .models import Profile, Post
 from django.contrib.auth.models import User
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'instagram_prj.settings')
+import django
+django.setup()
 # Create your tests here.
 class TestProfile(TestCase):
     def setUp(self):
