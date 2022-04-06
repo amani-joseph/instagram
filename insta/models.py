@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
+# from users_app.models import Profile
 
 # Create your models here.
 
@@ -30,3 +31,14 @@ class Post(models.Model):
         return reverse('insta-home')
 
 
+# class Comment(models.Model):
+#     comment = models.TextField()
+#     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+#     user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='comments')
+#     created = models.DateTimeField(auto_now_add=True, null=True)
+
+#     def __str__(self):
+#         return f'{self.user.name} Post'
+
+#     class Meta:
+#         ordering = ["-pk"]

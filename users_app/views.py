@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from insta.models import Post
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -32,9 +33,13 @@ def profile(request):
 @login_required
 def author_profile(request):
     context = {
-        'posts': Post.objects.filter(user=request.post.user).all()
+        'posts': Post.objects.filter(user=request.user).all(),
+        
     }
-    return render(request, 'users_app/not_user_profile.html',context )
+    # if request.user == Post.objects.post.user:  
+    return redirect('profile')
+    # else:
+    #     return render(request, 'users_app/not_user_profile.html',context )
 
 
 @login_required
