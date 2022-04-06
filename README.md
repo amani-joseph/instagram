@@ -17,7 +17,12 @@ This is an instagram clone built with Django. The aim is to is to build an insta
 
 ## Screenshot
 
-<!-- <img src="" > -->
+ <img src="https://github.com/amani-joseph/instagram/blob/main/Screenshots/Screen%20Shot%202022-04-06%20at%2011.36.17.png?raw=true" > 
+ <img src="https://github.com/amani-joseph/instagram/blob/main/Screenshots/Screen%20Shot%202022-04-06%20at%2011.36.27.png?raw=true" > 
+ <img src="https://github.com/amani-joseph/instagram/blob/main/Screenshots/Screen%20Shot%202022-04-06%20at%2011.36.43.png?raw=true" > 
+ <img src="https://github.com/amani-joseph/instagram/blob/main/Screenshots/amani-instagram.herokuapp.com_profile_%20(1).png?raw=true" > 
+
+[//]: # ( <img src="" > )
 
 ### Dependencies
 
